@@ -1,5 +1,5 @@
 === EDD Downloads As Services ===
-Contributors: sumobi
+Contributors: sumobi, easydigitaldownloads
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EFUPMPEZPGW7L
 Tags: easy digital downloads, digital downloads, e-downloads, edd, services, e-commerce, ecommerce, sumobi
 Requires at least: 3.3
@@ -26,23 +26,6 @@ So far, this plugin allows you to:
 1. Mark downloads as services on a per-download level. A checkbox is added to the download configuration metabox
 
 Suggestions welcome for future features. Developers can take advantage of the _edd_das_enabled meta_key and extend the plugin to suit their needs.
-
-**Looking for the perfect Easy Digital Downloads theme?**
-
-[http://wordpress.org/themes/shop-front/](http://wordpress.org/themes/shop-front/ "Shop Front")
-
-Shop Front is a simple, responsive & easily extensible theme for the Easy Digital Downloads plugin. It also functions perfectly without the plugin as a standard WordPress blog. A free child theme for modifications can be downloaded from [http://sumobi.com/shop/shop-front-child-theme](http://sumobi.com/shop/shop-front-child-theme "Shop Front Child Theme") as well as other free and paid add-ons to enhance the functionality and styling.
-
-**Stay up to date**
-
-*Subscribe to updates*
-[http://sumobi.com](http://sumobi.com "Sumobi")
-
-*Become a fan on Facebook*
-[http://www.facebook.com/sumobicom](http://www.facebook.com/sumobicom "Facebook")
-
-*Follow me on Twitter*
-[http://twitter.com/sumobi_](http://twitter.com/sumobi_ "Twitter")
 
 == Installation ==
 
