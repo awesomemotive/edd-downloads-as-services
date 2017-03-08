@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Easy Digital Downloads - Downloads As Services
-Plugin URI:
+Plugin URI: https://easydigitaldownloads.com/downloads/downloads-as-services/
 Description: Define downloads as "services". Services will not show "no downloadable files found" on the purchase confirmation page, nor will they show a dash in the purchase receipt email
 Version: 1.0.4
-Author: Andrew Munro, Sumobi
-Author URI: http://sumobi.com/
+Author: Easy Digital Downloads
+Author URI: https://easydigitaldownloads.com
 License: GPL-2.0+
 License URI: http://www.opensource.org/licenses/gpl-license.php
 */
