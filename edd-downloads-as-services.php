@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Easy Digital Downloads - Downloads As Services
-Plugin URI: 
+Plugin URI:
 Description: Define downloads as "services". Services will not show "no downloadable files found" on the purchase confirmation page, nor will they show a dash in the purchase receipt email
 Version: 1.0.4
 Author: Andrew Munro, Sumobi
@@ -77,7 +77,7 @@ if ( ! class_exists( 'EDD_Downloads_As_Services' ) ) {
 			// metabox
 			add_action( 'edd_meta_box_settings_fields', array( $this, 'add_metabox' ) );
 			add_action( 'edd_metabox_fields_save', array( $this, 'save_metabox' ) );
-			
+
 			// settings
 			add_filter( 'edd_settings_extensions', array( $this, 'settings' ) );
 
@@ -176,7 +176,7 @@ if ( ! class_exists( 'EDD_Downloads_As_Services' ) ) {
 					$title .= "&nbsp;" . edd_get_price_option_name( $item_id, $price_id );
 				}
 			}
-			
+
 			return $title;
 		}
 
@@ -191,7 +191,7 @@ if ( ! class_exists( 'EDD_Downloads_As_Services' ) ) {
 
 			// get array of service categories
 			$service_categories = isset( $edd_options['edd_das_service_categories'] ) ? $edd_options['edd_das_service_categories'] : '';
-			
+
 			$term_ids = array();
 
 			if ( $service_categories ) {
@@ -199,7 +199,7 @@ if ( ! class_exists( 'EDD_Downloads_As_Services' ) ) {
 					$term_ids[] = $term_id;
 				}
 			}
-			
+
 			$is_service = get_post_meta( $item_id, '_edd_das_enabled', true );
 
 			// get payment
@@ -218,10 +218,10 @@ if ( ! class_exists( 'EDD_Downloads_As_Services' ) ) {
 						return false;
 					}
 				}
-			} 
+			}
 
 			// check if download has meta key or has a service term assigned to it
-			if ( $is_service || ( !empty($term_ids) && has_term( $term_ids, 'download_category', $item_id ) ) ) {
+			if ( $is_service || ( ! empty( $term_ids ) && has_term( $term_ids, 'download_category', $item_id ) ) ) {
 				return true;
 			}
 
@@ -240,7 +240,7 @@ if ( ! class_exists( 'EDD_Downloads_As_Services' ) ) {
 			);
 
 			$terms = get_terms( 'download_category', apply_filters( 'edd_das_get_terms', $args ) );
-			
+
 			$terms_array = array();
 
 			foreach ( $terms as $term ) {
