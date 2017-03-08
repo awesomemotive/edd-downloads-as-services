@@ -214,13 +214,14 @@ if ( ! class_exists( 'EDD_Downloads_As_Services' ) ) {
 					$download_files = edd_get_download_files( $item_id, $price_id );
 
 					// if the service has a file attached, we still want to show it
-					if ( $download_files )
-						return;
+					if ( $download_files ) {
+						return false;
+					}
 				}
 			} 
 
 			// check if download has meta key or has a service term assigned to it
-			if ( $is_service || has_term( $term_ids, 'download_category', $item_id ) ) {
+			if ( $is_service || ( !empty($term_ids) && has_term( $term_ids, 'download_category', $item_id ) ) ) {
 				return true;
 			}
 
