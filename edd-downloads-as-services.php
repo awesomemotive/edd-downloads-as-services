@@ -77,13 +77,15 @@ if ( ! class_exists( 'EDD_Downloads_As_Services' ) ) {
 			// metabox
 			add_action( 'edd_meta_box_settings_fields', array( $this, 'add_metabox' ) );
 			add_action( 'edd_metabox_fields_save', array( $this, 'save_metabox' ) );
-			
+
 			// settings
 			add_filter( 'edd_settings_extensions', array( $this, 'settings' ) );
 
 			// filter each download
 			add_filter( 'edd_receipt_show_download_files', array( $this, 'receipt' ), 10, 2 );
 			add_filter( 'edd_email_receipt_download_title', array( $this, 'email_receipt' ), 10, 3 );
+
+			add_filter( 'edd_receipt_no_files_found_text', array( $this, 'no_files_found_text' ), 10, 2 );
 
 			do_action( 'edd_das_setup_actions' );
 		}
@@ -176,7 +178,7 @@ if ( ! class_exists( 'EDD_Downloads_As_Services' ) ) {
 					$title .= "&nbsp;" . edd_get_price_option_name( $item_id, $price_id );
 				}
 			}
-			
+
 			return $title;
 		}
 
@@ -191,7 +193,7 @@ if ( ! class_exists( 'EDD_Downloads_As_Services' ) ) {
 
 			// get array of service categories
 			$service_categories = isset( $edd_options['edd_das_service_categories'] ) ? $edd_options['edd_das_service_categories'] : '';
-			
+
 			$term_ids = array();
 
 			if ( $service_categories ) {
@@ -199,7 +201,7 @@ if ( ! class_exists( 'EDD_Downloads_As_Services' ) ) {
 					$term_ids[] = $term_id;
 				}
 			}
-			
+
 			$is_service = get_post_meta( $item_id, '_edd_das_enabled', true );
 
 			// get payment
@@ -217,7 +219,7 @@ if ( ! class_exists( 'EDD_Downloads_As_Services' ) ) {
 					if ( $download_files )
 						return;
 				}
-			} 
+			}
 
 			// check if download has meta key or has a service term assigned to it
 			if ( $is_service || has_term( $term_ids, 'download_category', $item_id ) ) {
@@ -239,7 +241,7 @@ if ( ! class_exists( 'EDD_Downloads_As_Services' ) ) {
 			);
 
 			$terms = get_terms( 'download_category', apply_filters( 'edd_das_get_terms', $args ) );
-			
+
 			$terms_array = array();
 
 			foreach ( $terms as $term ) {
@@ -253,6 +255,26 @@ if ( ! class_exists( 'EDD_Downloads_As_Services' ) ) {
 				return $terms_array;
 
 			return false;
+		}
+
+		/**
+		 * Remove "No downloadable files found." text for download services without a file
+		 *
+		 * @since  1.0.5
+		 *
+		 * @param  string $text The text that should appear when no downloadable files are found
+		 * @param  int $item_id The ID of the download
+		 *
+		 * @return string $text The text that should appear when no downloadable files are found
+		 */
+		public function no_files_found_text( $text, $item_id ) {
+
+			// Remove the text for download services without a file
+			if ( $this->is_service( $item_id ) ) {
+				$text = '';
+			}
+
+			return $text;
 		}
 
 		/**
