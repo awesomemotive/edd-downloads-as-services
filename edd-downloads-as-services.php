@@ -85,6 +85,8 @@ if ( ! class_exists( 'EDD_Downloads_As_Services' ) ) {
 			add_filter( 'edd_receipt_show_download_files', array( $this, 'receipt' ), 10, 2 );
 			add_filter( 'edd_email_receipt_download_title', array( $this, 'email_receipt' ), 10, 3 );
 
+			add_filter( 'edd_receipt_no_files_found_text', array( $this, 'no_files_found_text' ), 10, 2 );
+
 			do_action( 'edd_das_setup_actions' );
 		}
 
@@ -254,6 +256,26 @@ if ( ! class_exists( 'EDD_Downloads_As_Services' ) ) {
 				return $terms_array;
 
 			return false;
+		}
+
+		/**
+		 * Remove "No downloadable files found." text for download services without a file
+		 *
+		 * @since  1.0.5
+		 *
+		 * @param  string $text The text that should appear when no downloadable files are found
+		 * @param  int $item_id The ID of the download
+		 *
+		 * @return string $text The text that should appear when no downloadable files are found
+		 */
+		public function no_files_found_text( $text, $item_id ) {
+
+			// Remove the text for download services without a file
+			if ( $this->is_service( $item_id ) ) {
+				$text = '';
+			}
+
+			return $text;
 		}
 
 		/**
