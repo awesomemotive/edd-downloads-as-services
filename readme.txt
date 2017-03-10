@@ -3,7 +3,7 @@ Contributors: easydigitaldownloads, sumobi
 Tags: easy digital downloads, digital downloads, e-downloads, edd, services, e-commerce, ecommerce, sumobi
 Requires at least: 3.3
 Tested up to: 4.7.3
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,10 +42,13 @@ OR you can just install it with WordPress by going to Plugins >> Add New >> and 
 
 == Upgrade Notice ==
 
-= 1.0.5 =
-Removed the "No downloadable files found." text in email receipts for download services without a file. This was due to a recent update to EDD.
+= 1.0.6 =
+* Fix: Previous version was missing code related to the update.
 
 == Changelog ==
+
+= 1.0.6 =
+* Fix: Previous version was missing code related to the update.
 
 = 1.0.5 =
 * Fix: Removed the "No downloadable files found." text in email receipts for download services without a file. This was due to a recent update to EDD.
