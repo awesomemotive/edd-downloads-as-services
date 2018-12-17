@@ -2,7 +2,7 @@
 Contributors: easydigitaldownloads, sumobi
 Tags: easy digital downloads, digital downloads, e-downloads, edd, services, e-commerce, ecommerce, sumobi
 Requires at least: 3.3
-Tested up to: 4.7.3
+Tested up to: 5.0
 Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
