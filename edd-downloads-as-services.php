@@ -205,7 +205,7 @@ if ( ! class_exists( 'EDD_Downloads_As_Services' ) ) {
 			$is_service = get_post_meta( $item_id, '_edd_das_enabled', true );
 
 			// get cart details
-			$cart = edd_get_payment_meta_cart_details( $edd_receipt_args['id'], true );
+			$cart = ! empty( $edd_receipt_args['id'] ) ? edd_get_payment_meta_cart_details( $edd_receipt_args['id'], true ) : false;
 
 			if ( $cart ) {
 				foreach ( $cart as $key => $item ) {
