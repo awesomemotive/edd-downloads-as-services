@@ -204,10 +204,8 @@ if ( ! class_exists( 'EDD_Downloads_As_Services' ) ) {
 
 			$is_service = get_post_meta( $item_id, '_edd_das_enabled', true );
 
-			// get payment
-			$payment   = get_post( $edd_receipt_args['id'] );
-			$meta      = isset( $payment ) ? edd_get_payment_meta( $payment->ID ) : '';
-			$cart      = isset( $payment ) ? edd_get_payment_meta_cart_details( $payment->ID, true ) : '';
+			// get cart details
+			$cart = edd_get_payment_meta_cart_details( $edd_receipt_args['id'], true );
 
 			if ( $cart ) {
 				foreach ( $cart as $key => $item ) {
