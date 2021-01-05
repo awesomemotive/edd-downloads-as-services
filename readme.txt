@@ -2,8 +2,8 @@
 Contributors: easydigitaldownloads, sumobi
 Tags: easy digital downloads, digital downloads, e-downloads, edd, services, e-commerce, ecommerce, sumobi
 Requires at least: 3.3
-Tested up to: 5.0
-Stable tag: 1.0.6
+Tested up to: 5.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +11,7 @@ Mark Downloads As Services in Easy Digital Downloads
 
 == Description ==
 
-This plugin requires [Easy Digital Downloads](http://wordpress.org/extend/plugins/easy-digital-downloads/ "Easy Digital Downloads") v1.9 or greater.
+This plugin requires [Easy Digital Downloads](https://wordpress.org/plugins/easy-digital-downloads/ "Easy Digital Downloads") v1.9 or greater.
 
 Many customers use Easy Digital Downloads to sell "services" rather than "downloads". We get many requests to remove the "no downloadable files" on the purchase confirmation page, because their services do not have/need files attached. This plugin fixes that.
 
@@ -42,10 +42,17 @@ OR you can just install it with WordPress by going to Plugins >> Add New >> and 
 
 == Upgrade Notice ==
 
+= 1.0.7 =
+* Compatibility with upcoming EDD 3.0 release.
+
 = 1.0.6 =
 * Fix: Previous version was missing code related to the update.
 
 == Changelog ==
+
+= 1.0.7 =
+* New: Added Danish translation.
+* Fix: Compatibility with upcoming EDD 3.0 release.
 
 = 1.0.6 =
 * Fix: Previous version was missing code related to the update.

@@ -1,14 +1,14 @@
 <?php
-/*
-Plugin Name: Easy Digital Downloads - Downloads As Services
-Plugin URI: https://easydigitaldownloads.com/downloads/downloads-as-services/
-Description: Define downloads as "services". Services will not show "no downloadable files found" on the purchase confirmation page, nor will they show a dash in the purchase receipt email
-Version: 1.0.6
-Author: Easy Digital Downloads
-Author URI: https://easydigitaldownloads.com
-License: GPL-2.0+
-License URI: http://www.opensource.org/licenses/gpl-license.php
-*/
+/**
+ * Plugin Name: Easy Digital Downloads - Downloads As Services
+ * Plugin URI: https://easydigitaldownloads.com/downloads/downloads-as-services/
+ * Description: Define downloads as "services". Services will not show "no downloadable files found" on the purchase confirmation page, nor will they show a dash in the purchase receipt email
+ * Version: 1.0.7
+ * Author: Sandhills Development, LLC
+ * Author URI: https://sandhillsdev.com/
+ * License: GPL-2.0+
+ * License URI: http://www.opensource.org/licenses/gpl-license.php
+ */
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -204,10 +204,8 @@ if ( ! class_exists( 'EDD_Downloads_As_Services' ) ) {
 
 			$is_service = get_post_meta( $item_id, '_edd_das_enabled', true );
 
-			// get payment
-			$payment   = get_post( $edd_receipt_args['id'] );
-			$meta      = isset( $payment ) ? edd_get_payment_meta( $payment->ID ) : '';
-			$cart      = isset( $payment ) ? edd_get_payment_meta_cart_details( $payment->ID, true ) : '';
+			// get cart details
+			$cart = ! empty( $edd_receipt_args['id'] ) ? edd_get_payment_meta_cart_details( $edd_receipt_args['id'], true ) : false;
 
 			if ( $cart ) {
 				foreach ( $cart as $key => $item ) {
